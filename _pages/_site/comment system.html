@@ -1,0 +1,46 @@
+<p><a href="https://www.goatcounter.com/"><img src="https://opengraph.githubassets.com/4f866d5b634e7cd5422af77f8dbfb6d48dd288b7c5c18326544c1973210320ed/giscus/giscus" alt="goatcounter" class="img-lg" /></a></p>
+
+<p><strong>Giscus</strong> is a free <strong>comments system</strong> powered without your own database. Giscus uses the Github Discussions to store and load associated comments based on a chosen mapping (URL, pathname, title, etc.).</p>
+
+<p>To comment, visitors must authorize the giscus app to post on their behalf using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.</p>
+
+<h1 id="prerequisites">Prerequisites</h1>
+<hr />
+
+<h2 id="create-a-github-repo">Create a github repo</h2>
+
+<p>You need a GitHub repository first. If you gonna use <em>GitHub Pages</em> for hosting your website, you can choose the corresponding repository (i.e., <code class="language-plaintext highlighter-rouge">[userID].github.io</code>)</p>
+
+<p>The repository should be <strong>public</strong>, otherwise visitors will not be able to view the discussion.</p>
+
+<h2 id="turn-on-discussion-feature">Turn on Discussion feature</h2>
+
+<p>In your GitHub repository Settings, make sure that <code class="language-plaintext highlighter-rouge">General</code> &gt; <code class="language-plaintext highlighter-rouge">Features</code> &gt; <code class="language-plaintext highlighter-rouge">Discussions</code> feature is enabled.</p>
+
+<p><img src="https://i.ibb.co/P1FV02D/giscus-00.png" alt="Discussion" /></p>
+
+<h1 id="activate-giscus-api">Activate Giscus API</h1>
+<hr />
+
+<p>Follow the steps in <a href="https://giscus.app/">Configuration guide</a>. Make sure the verification of your repository is successful.</p>
+
+<p><img src="https://i.ibb.co/y87w8rB/giscus-02.png" alt="Verification" /></p>
+
+<p>Then, scroll down from the manual page and choose the <code class="language-plaintext highlighter-rouge">Discussion Category</code> options. You don’t need to touch other configs.</p>
+
+<p><img src="https://i.ibb.co/0hqLWX0/giscus-03.png" alt="Verification" /></p>
+
+<h2 id="copy--_configyml">Copy  <code class="language-plaintext highlighter-rouge">_config.yml</code></h2>
+
+<p>Now, you get the giscus script. Copy the four properties marked with a red box as shown below:</p>
+
+<p><img src="https://i.ibb.co/Z154x8P/giscus-04.png" alt="" /></p>
+
+<p>Paste those values to <code class="language-plaintext highlighter-rouge">_config.yml</code> placed in the root directory.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># External API
+giscus_repo: "[ENTER REPO HERE]"
+giscus_repoId: "[ENTER REPO ID HERE]"
+giscus_category: "[ENTER CATEGORY NAME HERE]"
+giscus_categoryId: "[ENTER CATEGORY ID HERE]"
+</code></pre></div></div>
