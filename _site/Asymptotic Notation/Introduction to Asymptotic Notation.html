@@ -454,11 +454,30 @@ Doug Bently and Jon Mcllroy</p>
 <p>To better assess the performance of programs, different notations are used to gain a better understanding of the theoretical limits of the algorithms.  ‘Big O’ notation is used as a means to gain a general idea of the worst-case performance or upper-bound limit of the algorithm.  ‘Big Theta’ notation is encased between Big O and Big Omega notations, giving the average complexity of the algorithm.  And as previously mentioned, ‘Big Omega’ sits below Big Theta, giving the lower-bound limit or best-case performance of the algorithm.</p>
 
 <h2 id="big-o-notation">Big O Notation</h2>
-<p>The first complexity notation which will be discussed is Big O notation.  It is also called the theoretical upper-bound limit or the worst-case complexity.  When analyzing the runtime complexity of different algorithms, one of the most frequently considered is the worst-case performance to assess the scalability of the solution.  In other words, when looking at the scalability, we are interested in how many operations are being performed by the algorithm as the input size increases.  By assessing the worst-case scenario, there can be more confidence in asserting the scalability of the solution.  The question, “what is the most amounts of operations that this algorithm is going to perform?” can be answered by big-O notation.</p>
+<p>The first complexity notation which will be discussed is Big O, or Big Order, notation.  It is also called the theoretical upper-bound limit or the worst-case complexity.  When analyzing the runtime complexity of different algorithms, one of the most frequently considered is the worst-case performance to assess the scalability of the solution.  In other words, when looking at the scalability, we are interested in how many operations are being performed by the algorithm as the input size increases.  By assessing the worst-case scenario, there can be more confidence in asserting the scalability of the solution.  The question, “what is the most amounts of operations that this algorithm is going to perform?” can be answered by big-O notation.</p>
 
-<h2 id="big-theta-θ-notation">Big Theta (Θ) Notation</h2>
+<p>Another way to think of big O notation is as a comparison between the growth of different functions.  As previously mentioned, there are many other factors which can impact how ‘fast’ in literal time it takes for the program to execute.  However, when looking at big O notation, the goal is to simplify the function as much as possible.  This would mean that, in practice, the environmental factors such as programming language or hardware is expressed in terms of constants.  By simplifying the expression of the functions, the constants can be dropped in order to assess the growth rates of the functions. So, for example the function:<br>
+\(T(n) = 10000 + 10(n)\)<br>
+can be used to express a program which takes 10000 ms to load and 10 ms to execute each transaction.  Both the 10000 ms and 10 ms are reliant on factors outside of the algorithm itself.  These constants can change when improvements are made to the environment which is executing the program.  However the equation can be simplified to ignore the constants, giving us<br>
+\(T(n) \in O(f(n))\)<br>
+With the simplified run time, it becomes much easier to compare the performance of the algorithms.  This can allow us to have a more formal definition of what is big O.</p>
+
+<blockquote>
+  <p>\(T(n) \in O(f(n))\) if and only if \(T(n) \leq cf(n)\), where c is some constant</p>
+</blockquote>
+
+<p>This definition shows that the focal point of the analysis would be set at the point at which the growth of \(cf(n)\) overtakes the growth of \(T(n)\).  It also establishes that big O is not necessarily just a quantity or a metric, but is more than that.  Big O describes the set of all functions which satisfy:</p>
+
+<blockquote>
+  <p>There exists positive constants \(c\), \(N\) such that, for all \(n \geq N\), \(T(n) \leq cf(n)\)<br>
+where \(N\) is the point at which \(T(n) \leq cf(n)\)</p>
+</blockquote>
+
+<p>As shown, big O is mostly conserned with expressing the upper bound limit of a function, thus will not be revealing much on the lower bound.  This means that while it is possible to use big O notation to establish the higher performance of a function compared to another, it does not reveal the lower bound.  So to prove that the function is slower, another notation is needed (Omega (Ω)).</p>
 
 <h2 id="big-omega-ω-notation">Big Omega (Ω) Notation</h2>
+
+<h2 id="big-theta-θ-notation">Big Theta (Θ) Notation</h2>
 
 <h1 id="common-runtimes-of-algorithms">Common Runtimes of Algorithms</h1>
 
@@ -481,6 +500,7 @@ Doug Bently and Jon Mcllroy</p>
         </span>
         <ul id="related-posts"></ul>
     </div> -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </main>
 <div class="top-arrow">
     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path></svg>
