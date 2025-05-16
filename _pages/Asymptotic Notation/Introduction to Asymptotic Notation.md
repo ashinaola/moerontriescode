@@ -33,8 +33,45 @@ This definition shows that the focal point of the analysis would be set at the p
 As shown, big O is mostly conserned with expressing the upper bound limit of a function, thus will not be revealing much on the lower bound.  This means that while it is possible to use big O notation to establish the higher performance of a function compared to another, it does not reveal the lower bound.  So to prove that the function is slower, another notation is needed (Omega (Ω)).
 
 ## Big Omega (Ω) Notation
+While Big O measures the upper bound or worst-case performance of a function, Big Ω looks at the lower bound of the function.  This means that big omega notation would reveal the best-case performance of a function which means that the notation measures the function's minimal amount of runtime and space complexity.  Just as previously mentioned with big O, big Ω notation examines the set of possible functions to fit certain criteria.  To provide a more mathematical understanding of big Ω notation, the following definition can provide a baseline understandng:
+
+> Given Two functions, $$ f(n) $$ and $$ g(n) $$, we can say $$ f(n) = Ω(g(n)) $$ if there exists constants $$ c \gt 0 $$ and $$ n_{o} \ge 0 $$ such that $$ f(n) \ge c\cdot g(n) $$ for all $$ n \ge n_{o} $$.
+
+From the definition, we can gather that Ω notation provides the justification of whether a function $$ f(n) $$ will grow faster than another function multiplied by a constant, $$ c\cdot g(n) $$.  This establishes Ω notation as a reliable measure of the best-case performance of a function, or its lower-bound asymptotic growth.
+
+The steps to defining the Ω notation of a functions goes as follows:
+    1. Break the function into smaller, modular segments.
+    2. Find the complexity of each segment.
+    3. Add the constants together and drop the constants.
+
+By following the steps, the Ω notation can be guarteed to establish the tight lower bound of the function, and give a good estimate of what the best case performance of the algorithm is.
+
+While it can be very useful and revealing, big Ω notation is not frequently used to analyze the function's asymptotic growth compared to Big O notation.  The main reason for why the notation is not used is because the notation gives an accurate but imprecise measure of function performance.  For example, say we define a function such that:
+
+```
+function(input list: n, element)
+    do
+    compare (list[index] == element)
+        true -> stop
+        false -> continue
+```
+
+In other words, the defined function will perform a linear search on an input and stop once the matching element is found.  The best case performance for the algorithm can be O(1), since the first element encountered can come as a match.  However, this is not necessarily precise since the algorithm will not perform in constant time most of the time.  For this reason, big Ω notation is not used frequently to analyze and compare algorithmic performance due to its imprecise nature.
 
 ## Big Theta (Θ) Notation
+While big O returns the upper-bound and big Ω returns the lower-bound of the function, big Θ returns the average growth of the function.  Also, big Θ returns more precise results compared to big Ω due to the average case needing to compute the upper and lower bounds of the function.  The definition of big Θ notation goes as follows:
+
+> Let g and f be functions, f is said to be Θ(g) if there are two constants $$ c_{1}, c_{2} \gt 0 $$ and a natural number $$ n_{0} $$ such that $$ c_{1} \cdot g(n) \le f(n) \le c_{2} \cdot g(n) $$ for all $$ n \ge n_{0} $$.
+
+In other words, if a function f is Θ(g), the values of f will be encased between the function g(n) multiplied by two constants, $$ c_{1} $$ and $$ c_{2} $$.  This guarantees that the Θ notation will give the average case of the function.  So by providing the upper and lower bounds of the function, the notation can find the average case complexity of the function.  This precise measure can be useful as well as powerful when analyzing the asymptotic growth of the function.
+
+To find the average complexity of the function, the high level overview of the steps are similar to finding the Ω notation with several differences:
+    1. Break the function into smaller segments.
+    2. Find all possible inputs for the algorithm.
+    3. Calculate the amount of operations that can be performed on the input.
+    4. Divide the amount of operations by the number of segments to find the average of all complexities.
+
+*So, if Θ notation encapsulates both upper and lower bounds, why isn't it mentioned more frequently?*  Might be a question that may be asked.  This is because, as algorithms become more complex, it becomes more difficult to be able to find all possible inputs and then calculate the operations.  In this case, many will default to using big O notation to find the upper-bound limit of the function's asymptotic growth.  While Θ notation is precise, it can be a complex process to be able to return any useful information from analysis, so big O notation is more applicable in this scenario since it reveals more than Θ notation.
 
 # Common Runtimes of Algorithms
 
