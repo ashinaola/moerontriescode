@@ -74,13 +74,56 @@ To find the average complexity of the function, the high level overview of the s
 *So, if Θ notation encapsulates both upper and lower bounds, why isn't it mentioned more frequently?*  Might be a question that may be asked.  This is because, as algorithms become more complex, it becomes more difficult to be able to find all possible inputs and then calculate the operations.  In this case, many will default to using big O notation to find the upper-bound limit of the function's asymptotic growth.  While Θ notation is precise, it can be a complex process to be able to return any useful information from analysis, so big O notation is more applicable in this scenario since it reveals more than Θ notation.
 
 # Common Runtimes of Algorithms
+![Graph of growth rates](/assets/img/asymptoticgrowths.png "Graph of complexities")
+
+From this point, the runtimes that will be discussed will mainly be in big O, due to the frequency of its use.  When discussing different runtimes, the default which is used is big O notation.  While there are many different runtimes, the most common run times are factorial, exponential, polynomial, linear, and constant.  These all describe asymptotic growth patterns of different algorithms into 5 general categories of runtimes.  This allows programmers to compare the efficiency of different solutions by supposing an infinite or progressively larger input size.  These aren't only used to analyze runtime, they can also be used to analyze space-time complexity.  Space-time complexity measures how well a solution works with memory, assessing whether it is efficient or a horrible use of memory.  It is generally accepted that complexities which are exponential and factorial scale very badly, whereas solutions in polynomial, linear, or constant time scale very well.
 
 ## Factorial
+This is considered the worst possible complexity.  This general set of solutions run at a complexity of O(n!), hence the name.  These solutions are extraordinarily terrible to scale as demonstrated in the above graph relative to other complexities.  One of the important aspects to notice is the near immediate increase in the amount of operations which is performed by the solution.  Most solutions which fall within this category of complexity are generally considered extraordinarily innefficient and impractical.  However, there can be instances where factorial runtimes can be useful, such as proposing a brute-force solution to an unsolved problem.
+Examples of algorithms with factorial runtimes include:
+* Travelling salesman (Brute force)
+* Generating all possible permutations of a set
+* Password cracking (Brute force)
+* Bogosort
+
+Each of the previously mentioned algorithms are brute force algorithms which try every possible combination until the solution is reached.  For instance, bogosort is a simple two step solution which takes an input which is comprised of elements which can be sorted and randomly shuffles the elements until they are confirmed sorted.  As such the algorithm can be broken down into two segments, where the shuffling of elements create O($$ n! $$) runtime and the confirmation of whether the elements are sorted reveal an O($$ n $$) runtime.  By combining these runtimes, we get O($$ n! + n $$) upper bound, or O($$ n! $$).
+As previously mentioned, these algorithms are considered generally useless due to its impractical nature when it comes to scaling.  However, the importance of solutions with factorial runtimes is due to the problem being novel and, normally, there not being any previously established solution.  It is encouraged to try and find a more efficient solution to allow for its nature to be practical in the context of 'the real world'.
 
 ## Exponential
+While somewhat an improvement from factorial, exponential runtimes are still very terrible at scaling and still encompass some brute force solution.  On the above graph, the asymptotic complexity is shown to grow faster than all other runtime complexities on the graph other than factorial.  Exponential solutions scale upwards at a rate of $$ n^n $$, hence its big O complexity is notated O($$ n^n $$).
+Some examples of algorithms that have exponential runtimes include:
+* Naive solution to the n-queens problem
+* Generating the Fibonacci sequence (recursive)
+
+Each of the previous algorithms approach the problem in an naive way and is still considered generally impractical due to its inability to scale to be applied to larger sets.  For example, when solving for the n-th Fibonacci number recursively, the algorithm returns the solution by first generating a recursion tree from a base case of 1.  The function calls are then pushed onto a callstack and then popped to return the solution.  One of the most important characterstics of this runtime is that it encompasses naive approaches just like factorial solutions.  This means that while the solutions may be hard to apply to larger inputs, the importance of improving upon an naive solution like the previously mentioned solutions should not be dismissed.
 
 ## Polynomial
+Polynomial runtimes, generally notated as O($$ n \cdot log(n) $$) but officially defined O($$ n^k $$), are the first set of functions and solutions which are considered practical for larger sets.  Also, the runtime O($$ n^2 $$) is considered its own category, quadratic, despite the runtime seemingly mapping to exponential runtime.  Algorithms with quadratic runtimes are also considered poloynomial, so they can be defined as a subset of solutions which have polynomial runtimes.
+
+The set of functions which have polynomial runtimes can scale well as the input size increases relative to exponential and factorial growth rates, as seen in the graph above.  There are plenty of different sorting algorithns, string parsing solutions, backtracking solutions, etc. which can have a polynomial runtimes.  More familiar examples of algorithms which are considered polynomial time inclulde the operations used in arithmetics such as addition, multiplication, division, and subtraction.
+
+Polynomial runtimes are considered "fast" and are frequently encountered within the area of algorithmic analysis, due to its smoother growth rate relative to the other previously mentioned growth patterns.
 
 ## Linear
+One of the introductory searching algorithms that computer science students are shown is the linear search.  The linear search algorithm is very simple:
+```
+Input: A list of elements, element to find
+
+1. Start at the beginning entry
+2. Compare the element to the input element to see if they are matching
+3. If match: Return the index of the matched element
+   If not matched: Continue to the next index
+```
+This is an example of an algorithm or solution which has a linear, or O($$ n $$), worst case runtimes.  The reason is because as the input size grows, the worst case scenario is for the algorithm to not find any matches within the list.  In this case, it will traverse the entire list and return false.  With this understanding, there are other examples of solutions which run in linear time which might be as intuitive as linear search:
+* Deleting and item from a linked list
+* Checking if a string is a palindrome
+
+Algorithms which run in linear time are considered very fast, however can lead to problems when the input size increases to larger amounts.  Generally, linear searches perform worse when the list size begins to increase to larger sizes.
 
 ## Constant
+Functions which run in constant time are considered the best since it will take the same amount of time to execute the solution, no matter how large the size is.  Often denoted as O(1), there are different examples of solutions which run in constant time.  For example, if we are given an indexed list such as an array, returning an element in the array based on the index would run in constant time.  The idea being, if there was an indexed list of elements, returning the seventh element of the list would take about the same amount of time no matter the size of the list whether it is 10, 100, or 1000 elements large. Some examples of well-known indexed lists include:
+* Hash maps
+* Arrays
+* Databases
+
+All of these can be ideal if the goal is to store and retrieve the elements frequently.  Execution of a retrieval function would not take long and would not change as the input size increases.  This can allow for the solution to offer a mechanism of consistency within runtime complexities.
