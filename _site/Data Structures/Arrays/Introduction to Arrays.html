@@ -7,29 +7,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
     
-        Example Post: no thumbnail image
+        Introduction to Arrays
     
 </title>
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Example Post: no thumbnail image | morontriescode.com</title>
+<title>Introduction to Arrays | morontriescode.com</title>
 <meta name="generator" content="Jekyll v4.4.1">
-<meta property="og:title" content="Example Post: no thumbnail image">
+<meta property="og:title" content="Introduction to Arrays">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="Follow the guidance">
-<meta property="og:description" content="Follow the guidance">
-<link rel="canonical" href="http://localhost:4000/%5B%22/morontriescode%22%5D/Data%20Structures/Arrays/post-01.html">
-<meta property="og:url" content="http://localhost:4000/%5B%22/morontriescode%22%5D/Data%20Structures/Arrays/post-01.html">
+<meta name="description" content="Moron tries to review computer science concepts">
+<meta property="og:description" content="Moron tries to review computer science concepts">
+<link rel="canonical" href="http://localhost:4000/Data%20Structures/Arrays/Introduction%20to%20Arrays.html">
+<meta property="og:url" content="http://localhost:4000/Data%20Structures/Arrays/Introduction%20to%20Arrays.html">
 <meta property="og:site_name" content="morontriescode.com">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2023-12-01T00:00:00-08:00">
+<meta property="article:published_time" content="2025-05-19T00:00:00-07:00">
 <meta name="twitter:card" content="summary">
-<meta property="twitter:title" content="Example Post: no thumbnail image">
+<meta property="twitter:title" content="Introduction to Arrays">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-01T00:00:00-08:00","datePublished":"2023-12-01T00:00:00-08:00","description":"Follow the guidance","headline":"Example Post: no thumbnail image","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/%5B%22/morontriescode%22%5D/Data%20Structures/Arrays/post-01.html"},"url":"http://localhost:4000/%5B%22/morontriescode%22%5D/Data%20Structures/Arrays/post-01.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-19T00:00:00-07:00","datePublished":"2025-05-19T00:00:00-07:00","description":"Moron tries to review computer science concepts","headline":"Introduction to Arrays","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Data%20Structures/Arrays/Introduction%20to%20Arrays.html"},"url":"http://localhost:4000/Data%20Structures/Arrays/Introduction%20to%20Arrays.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-<link rel="shortcut icon" type="image/png" href="[">
+<link rel="shortcut icon" type="image/png" href="/assets/img/favicon.webp">
 <style>
 @font-face {
     font-family: 'Nunito Sans';
@@ -37,7 +37,7 @@
     font-weight: 400;
     font-display: optional;
     src: local('Nunito Sans'),
-         url("/morontriescode/assets/fonts/NunitoSans-Regular.woff2") format("woff2");
+         url("/assets/fonts/NunitoSans-Regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -46,7 +46,7 @@
     font-weight: 600;
     font-display: optional;
     src: local('Righteous'),
-         url("/morontriescode/assets/fonts/Righteous-Regular.woff2") format("woff2");
+         url("/assets/fonts/Righteous-Regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -55,11 +55,11 @@
     font-weight: 400;
     font-display: optional;
     src: local('Lato'),
-         url("/morontriescode/assets/fonts/Lato-Regular.woff2") format("woff2");
+         url("/assets/fonts/Lato-Regular.woff2") format("woff2");
 }
 </style>
 
-<script src="[" type="text/javascript"></script>
+<script src="/assets/js/fontfaceobserver.js" type="text/javascript"></script>
 <script type="text/javascript">
     const nunitoObserver = new FontFaceObserver('Nunito Sans');
     const righteousObserver = new FontFaceObserver('Righteous');
@@ -74,10 +74,10 @@
     });
 </script>
 
-<meta name="baseurl" content="/morontriescode">
+<meta name="baseurl" content="">
 <meta name="description" content="Moron tries to review computer science concepts">
-        <link rel="preload" href="[" as="image">
-        <link rel="stylesheet" href="[">
+        <link rel="preload" href="/assets/img/selfghibili.webp" as="image">
+        <link rel="stylesheet" href="/assets/css/style.css">
         
             
 
@@ -88,16 +88,10 @@
 
             
                 <style>
-                    .thumbnail {
-                        aspect-ratio: auto !important;
-                    }
-                    .transbox {
-                        transform: none;
-                        position: relative;
-                        margin: auto;
-                        left: 0;
-                        top: 0;
-                    }
+                        .thumbnail {
+                            background-image: url("/assets/img/thumbnail/arraythumbnail.png");
+                        }
+                    
                 </style>
             
         
@@ -112,8 +106,8 @@
         <div class="sidebar sidebar-left">
     <div class="side-banner">
         <h1 class="site-tab">
-            <a href="[" class="site-name">
-                <img src="[" alt="" loading="lazy">
+            <a href="/" class="site-name">
+                <img src="/assets/img/icon/house.webp" alt="" loading="lazy">
                 <mark>morontriescode.com</mark>
             </a>
             <button id="btn-brightness" aria-label="brightness-button">
@@ -127,8 +121,8 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg>
             </button>
         </h1>
-        <a href="[" class="site-avatar" aria-label="site-avatar">
-            <img src="[" loading="lazy" alt="homepage" aria-label="homepage-button">
+        <a href="/" class="site-avatar" aria-label="site-avatar">
+            <img src="/assets/img/selfghibili.webp" loading="lazy" alt="homepage" aria-label="homepage-button">
         </a>
     </div>
     <div class="side-info">
@@ -183,13 +177,23 @@
 
         
     
-            
-            
 
         
     
             
             
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
 
         
     
@@ -201,7 +205,7 @@
     <ul class="nav-list">
 <li id="nav-first" aria-label="Asymptotic Notation">
             <div class="nav-item">
-                <a href="[" class="nav-list-link nav-lh">
+                <a href="/Asymptotic%20Notation/" class="nav-list-link nav-lh">
                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"></path></svg>
                     <span>Asymptotic Notation</span>
                 </a><button class="nav-list-expander" aria-label="toggle items in Asymptotic Notation category" aria-pressed="false">
@@ -210,7 +214,7 @@
 </div>
 <ul class="nav-list"><li id="nav-second" aria-label="Introduction to Asymptotic Notation">
                     <div class="nav-item">
-                        <a href="[" class="nav-list-link nav-sh">
+                        <a href="/Asymptotic%20Notation/Introduction%20to%20Asymptotic%20Notation.html" class="nav-list-link nav-sh">
                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                             <span>Introduction to Asymptotic Notation</span>
                         </a>
@@ -219,7 +223,7 @@
 </li>
 <li id="nav-first" aria-label="Data Structures">
             <div class="nav-item">
-                <a href="[" class="nav-list-link nav-lh">
+                <a href="/Data%20Structures/" class="nav-list-link nav-lh">
                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"></path></svg>
                     <span>Data Structures</span>
                 </a><button class="nav-list-expander" aria-label="toggle items in Data Structures category" aria-pressed="false">
@@ -229,15 +233,51 @@
 <ul class="nav-list">
 <li id="nav-second" aria-label="Arrays">
                     <div class="nav-item">
-                        <a href="[" class="nav-list-link nav-sh">
+                        <a href="/Data%20Structures/Arrays/" class="nav-list-link nav-sh">
                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                             <span>Arrays</span>
-                        </a>
+                        </a><button class="nav-list-expander" aria-label="toggle items in Arrays category" aria-pressed="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
+                        </button>
 </div>
+<ul class="nav-list">
+<li id="nav-third" aria-label="2-D Arrays">
+                                <div class="nav-item">
+                                    <a href="/Data%20Structures/Arrays/2-D%20Arrays.html" class="nav-list-link nav-sh">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
+                                        <span>2-D Arrays</span>
+                                    </a>
+                                </div>
+                            </li>
+<li id="nav-third" aria-label="Dynamic Arrays">
+                                <div class="nav-item">
+                                    <a href="/Data%20Structures/Arrays/Dynamic%20Arrays.html" class="nav-list-link nav-sh">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
+                                        <span>Dynamic Arrays</span>
+                                    </a>
+                                </div>
+                            </li>
+<li id="nav-third" aria-label="Introduction to Arrays">
+                                <div class="nav-item">
+                                    <a href="/Data%20Structures/Arrays/Introduction%20to%20Arrays.html" class="nav-list-link nav-sh">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
+                                        <span>Introduction to Arrays</span>
+                                    </a>
+                                </div>
+                            </li>
+<li id="nav-third" aria-label="Jagged Arrays">
+                                <div class="nav-item">
+                                    <a href="/Data%20Structures/Arrays/Jagged%20Arrays.html" class="nav-list-link nav-sh">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
+                                        <span>Jagged Arrays</span>
+                                    </a>
+                                </div>
+                            </li>
+</ul>
 </li>
 <li id="nav-second" aria-label="Balanced Trees">
                     <div class="nav-item">
-                        <a href="[" class="nav-list-link nav-sh">
+                        <a href="/Data%20Structures/Balanced%20Trees/" class="nav-list-link nav-sh">
                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                             <span>Balanced Trees</span>
                         </a>
@@ -245,7 +285,7 @@
 </li>
 <li id="nav-second" aria-label="Binary Search Trees">
                     <div class="nav-item">
-                        <a href="[" class="nav-list-link nav-sh">
+                        <a href="/Data%20Structures/Binary%20Search%20Trees/" class="nav-list-link nav-sh">
                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                             <span>Binary Search Trees</span>
                         </a>
@@ -253,7 +293,7 @@
 </li>
 <li id="nav-second" aria-label="Binary Trees">
                     <div class="nav-item">
-                        <a href="[" class="nav-list-link nav-sh">
+                        <a href="/Data%20Structures/Binary%20Trees/" class="nav-list-link nav-sh">
                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                             <span>Binary Trees</span>
                         </a>
@@ -261,7 +301,7 @@
 </li>
 <li id="nav-second" aria-label="Complete Binary Trees">
                     <div class="nav-item">
-                        <a href="[" class="nav-list-link nav-sh">
+                        <a href="/Data%20Structures/Complete%20Binary%20Trees/" class="nav-list-link nav-sh">
                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                             <span>Complete Binary Trees</span>
                         </a>
@@ -269,7 +309,7 @@
 </li>
 <li id="nav-second" aria-label="Full Binary Tree">
                     <div class="nav-item">
-                        <a href="[" class="nav-list-link nav-sh">
+                        <a href="/Data%20Structures/Full%20Binary%20Tree/" class="nav-list-link nav-sh">
                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                             <span>Full Binary Tree</span>
                         </a>
@@ -277,7 +317,7 @@
 </li>
 <li id="nav-second" aria-label="Linked Lists">
                     <div class="nav-item">
-                        <a href="[" class="nav-list-link nav-sh">
+                        <a href="/Data%20Structures/Linked%20Lists/" class="nav-list-link nav-sh">
                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                             <span>Linked Lists</span>
                         </a><button class="nav-list-expander" aria-label="toggle items in Linked Lists category" aria-pressed="false">
@@ -287,7 +327,7 @@
 <ul class="nav-list">
 <li id="nav-third" aria-label="Subsubcategory 1">
                                 <div class="nav-item">
-                                    <a href="[" class="nav-list-link nav-sh">
+                                    <a href="/Data%20Structures/Linked%20Lists/Subsubcategory%201/index.html" class="nav-list-link nav-sh">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                                         <span>Subsubcategory 1</span>
                                     </a>
@@ -295,7 +335,7 @@
                             </li>
 <li id="nav-third" aria-label="Subsubcategory 2">
                                 <div class="nav-item">
-                                    <a href="[" class="nav-list-link nav-sh">
+                                    <a href="/Data%20Structures/Linked%20Lists/Subsubcategory%202/index.html" class="nav-list-link nav-sh">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                                         <span>Subsubcategory 2</span>
                                     </a>
@@ -303,7 +343,7 @@
                             </li>
 <li id="nav-third" aria-label="post-03">
                                 <div class="nav-item">
-                                    <a href="[" class="nav-list-link nav-sh">
+                                    <a href="/Data%20Structures/Linked%20Lists/post-03.html" class="nav-list-link nav-sh">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                                         <span>post-03</span>
                                     </a>
@@ -313,7 +353,7 @@
 </li>
 <li id="nav-second" aria-label="Queues">
                     <div class="nav-item">
-                        <a href="[" class="nav-list-link nav-sh">
+                        <a href="/Data%20Structures/Queues/" class="nav-list-link nav-sh">
                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                             <span>Queues</span>
                         </a>
@@ -321,7 +361,7 @@
 </li>
 <li id="nav-second" aria-label="Stacks">
                     <div class="nav-item">
-                        <a href="[" class="nav-list-link nav-sh">
+                        <a href="/Data%20Structures/Stacks/" class="nav-list-link nav-sh">
                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                             <span>Stacks</span>
                         </a>
@@ -329,7 +369,7 @@
 </li>
 <li id="nav-second" aria-label="Unbalanced Trees">
                     <div class="nav-item">
-                        <a href="[" class="nav-list-link nav-sh">
+                        <a href="/Data%20Structures/Unbalanced%20Trees/" class="nav-list-link nav-sh">
                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                             <span>Unbalanced Trees</span>
                         </a>
@@ -339,7 +379,7 @@
 </li>
 <li id="nav-first" aria-label="Home">
             <div class="nav-item">
-                <a href="[" class="nav-list-link nav-lh">
+                <a href="/" class="nav-list-link nav-lh">
                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"></path></svg>
                     <span>Home</span>
                 </a>
@@ -405,15 +445,15 @@
                 <div class="category-tree">
 <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"></path></svg>
     <p>
-                <a href="[">Home</a>
+                <a href="/">Home</a>
                 &gt;
-            <a href="[" structures>Data Structures</a>
+            <a href="/Data%20Structures/">Data Structures</a>
                 &gt;
-            <a href="[" structures>Arrays</a>
+            <a href="/Data%20Structures/Arrays/">Arrays</a>
                 &gt;
             
                 
-                    Example Post: no thumbnail image
+                    Introduction to Arrays
                 
             </p>
 </div>
@@ -422,11 +462,11 @@
     <div class="thumbnail">
         <div class="transbox">
             
-                <span class="post-title">Example Post: no thumbnail image</span>
+                <span class="post-title">Introduction to Arrays</span>
             
             <div class="post-info">
                 
-                    <a class="info-box category-box" href="[" structures>
+                    <a class="info-box category-box" href="/Data%20Structures">
                         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512"><path d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z"></path></svg>
                         <span>Data Structures</span>
                     </a>
@@ -434,7 +474,7 @@
                 <span class="info-box">
                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"></path></svg>
                     <span>
-                            2023-12-01
+                            2025-05-19
                         
                     </span>
                 </span>
@@ -449,21 +489,7 @@
 </div>
 <div class="tag-box"></div>
 <main>
-    <h1 id="follow-the-guidance">Follow the guidance</h1>
-<hr>
-
-<p><strong>Fill the image path to the ‘thumbnail’ attribute, if you want a main image to be displayed on the post header image.</strong></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
-title: "Example Post: thumbnail exists"
-date: "2023-12-02"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
----
-</code></pre></div></div>
-
-<p>The rest content is just meaningless dummy text.</p>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
 
     <!-- see https://giscus.app/ -->
     <!-- <div class="giscus" id="giscus" style="margin: 4rem auto;"></div>
@@ -499,7 +525,7 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
     </div>
 </div>
     </body>
-    <script defer src="["></script>
+    <script defer src="/assets/js/background.js"></script>
 <script defer src="https://www.googletagmanager.com/gtag/js?id="></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -509,12 +535,12 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
     gtag('config', '');
 </script>
     
-        <script src="["></script>
-        <link rel="preload" href="[" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="["></noscript>
-        <script defer src="["></script>
+        <script src="/assets/js/post.js"></script>
+        <link rel="preload" href="/assets/css/highlight.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/assets/css/highlight.min.css"></noscript>
+        <script defer src="/assets/js/highlight.min.js"></script>
     
-    <script src="["></script>
+    <script src="/assets/js/common.js"></script>
     <script defer>
     var posts = [];
 
@@ -525,8 +551,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Asymptotic Notation",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Asymptotic%20Notation/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Asymptotic%20Notation/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -536,8 +562,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Arrays",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Arrays/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Data%20Structures/Arrays/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -547,8 +573,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Balanced Trees",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Balanced%20Trees/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Data%20Structures/Balanced%20Trees/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -558,8 +584,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Binary Search Trees",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Binary%20Search%20Trees/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Data%20Structures/Binary%20Search%20Trees/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -569,8 +595,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Binary Trees",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Binary%20Trees/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Data%20Structures/Binary%20Trees/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -580,8 +606,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Complete Binary Trees",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Complete%20Binary%20Trees/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Data%20Structures/Complete%20Binary%20Trees/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -591,8 +617,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Full Binary Tree",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Full%20Binary%20Tree/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Data%20Structures/Full%20Binary%20Tree/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -602,8 +628,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Linked Lists > Subsubcategory 1",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Linked%20Lists/Subsubcategory%201/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Data%20Structures/Linked%20Lists/Subsubcategory%201/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -613,8 +639,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Linked Lists > Subsubcategory 2",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Linked%20Lists/Subsubcategory%202/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Data%20Structures/Linked%20Lists/Subsubcategory%202/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -624,8 +650,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Linked Lists",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Linked%20Lists/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Data%20Structures/Linked%20Lists/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -635,8 +661,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Queues",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Queues/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Data%20Structures/Queues/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -646,8 +672,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Stacks",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Stacks/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Data%20Structures/Stacks/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -657,8 +683,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Unbalanced Trees",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Unbalanced%20Trees/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Data%20Structures/Unbalanced%20Trees/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -668,8 +694,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/Data%20Structures/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
         });
     
@@ -679,31 +705,9 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "",
             'type'     : "category",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/index.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
+            'url'      : "/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
             'date'     : "1900-01-01"
-        });
-    
-
-        posts.push({
-            'title'    : "Example Post: no thumbnail image",
-            'path'     : "Data Structures > Arrays",
-            'type'     : "post",
-            'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Arrays/post-01.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/empty.jpg",
-            'date'     : "2023-12-01"
-        });
-    
-
-        posts.push({
-            'title'    : "Example Post: thumbnail exists",
-            'path'     : "Data Structures > Arrays",
-            'type'     : "post",
-            'tags'     : "",
-            'url'      : "["/morontriescode"]/Data%20Structures/Arrays/post-02.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/bricks.webp",
-            'date'     : "2023-12-02"
         });
     
 
@@ -712,8 +716,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Linked Lists",
             'type'     : "post",
             'tags'     : "book, education",
-            'url'      : "["/morontriescode"]/Data%20Structures/Linked%20Lists/post-03.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/book.jpg",
+            'url'      : "/Data%20Structures/Linked%20Lists/post-03.html",
+            'image'    : "/assets/img/thumbnail/book.jpg",
             'date'     : "2023-12-03"
         });
     
@@ -723,8 +727,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Linked Lists > Subsubcategory 1",
             'type'     : "post",
             'tags'     : "book, epic novel, romance",
-            'url'      : "["/morontriescode"]/Data%20Structures/Linked%20Lists/Subsubcategory%201/post-04.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/nightgardenflower.jpg",
+            'url'      : "/Data%20Structures/Linked%20Lists/Subsubcategory%201/post-04.html",
+            'image'    : "/assets/img/thumbnail/nightgardenflower.jpg",
             'date'     : "2023-12-04"
         });
     
@@ -734,8 +738,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Data Structures > Linked Lists > Subsubcategory 2",
             'type'     : "post",
             'tags'     : "book, epic novel, adventure",
-            'url'      : "["/morontriescode"]/Data%20Structures/Linked%20Lists/Subsubcategory%202/post-05.html",
-            'image'    : "["/morontriescode"]/assets/img/La-Mancha.jpg",
+            'url'      : "/Data%20Structures/Linked%20Lists/Subsubcategory%202/post-05.html",
+            'image'    : "/assets/img/La-Mancha.jpg",
             'date'     : "2023-12-05"
         });
     
@@ -745,9 +749,53 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
             'path'     : "Asymptotic Notation",
             'type'     : "post",
             'tags'     : "",
-            'url'      : "["/morontriescode"]/Asymptotic%20Notation/Introduction%20to%20Asymptotic%20Notation.html",
-            'image'    : "["/morontriescode"]/assets/img/thumbnail/bigograph.jpg",
+            'url'      : "/Asymptotic%20Notation/Introduction%20to%20Asymptotic%20Notation.html",
+            'image'    : "/assets/img/thumbnail/bigograph.jpg",
             'date'     : "2025-05-12"
+        });
+    
+
+        posts.push({
+            'title'    : "2-D Arrays: Introduction and Examples",
+            'path'     : "Data Structures > Arrays",
+            'type'     : "post",
+            'tags'     : "",
+            'url'      : "/Data%20Structures/Arrays/2-D%20Arrays.html",
+            'image'    : "/assets/img/thumbnail/2Darray.png",
+            'date'     : "2025-05-19"
+        });
+    
+
+        posts.push({
+            'title'    : "Dynamic Arrays: Let&#39;s Create and Use One",
+            'path'     : "Data Structures > Arrays",
+            'type'     : "post",
+            'tags'     : "",
+            'url'      : "/Data%20Structures/Arrays/Dynamic%20Arrays.html",
+            'image'    : "/assets/img/thumbnail/dynamicarray.png",
+            'date'     : "2025-05-19"
+        });
+    
+
+        posts.push({
+            'title'    : "Introduction to Arrays",
+            'path'     : "Data Structures > Arrays",
+            'type'     : "post",
+            'tags'     : "",
+            'url'      : "/Data%20Structures/Arrays/Introduction%20to%20Arrays.html",
+            'image'    : "/assets/img/thumbnail/arraythumbnail.png",
+            'date'     : "2025-05-19"
+        });
+    
+
+        posts.push({
+            'title'    : "Jagged Arrays: Taking Them to the Next Level",
+            'path'     : "Data Structures > Arrays",
+            'type'     : "post",
+            'tags'     : "",
+            'url'      : "/Data%20Structures/Arrays/Jagged%20Arrays.html",
+            'image'    : "/assets/img/thumbnail/jaggedarray.png",
+            'date'     : "2025-05-19"
         });
     
 
