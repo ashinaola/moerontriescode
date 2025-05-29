@@ -571,11 +571,63 @@ void traversal(int demoArray[], int&amp; arraySize) {
 
 
 Searching
+Another operation which are common in arrays is searching, where the provided element is provided and the array is traversed until the desired element is found.  This is a particular style of searching called linear search which has a runtime of O(\(n\)).  There are other forms of search which has faster runtimes which will be explored in other posts, such as binary search, however the focus will be in implementation of linear search.
+
+
+  Start at the first element
+Check if element is matching:
+If true: return true and break
+Return false
+
+
+The linear search is one of the introductory searches which students get familiar with and its intuitive approach to finding elements make it a general useful tool for the presented problem of finding the element in a static array.  This code segment is an implementation of a typical linear search, using the demoArray example:
+int linearSearch(int demoArray[], int arraySize, int element) {
+    for(int i = 0; i &lt; arraySize; i++) {
+        if (demoArray[i] == element) {
+            return i;
+        }
+    }
+    return -1;
+}
+
 
 Sorting
+There are several sorting algorithms which are utilized to sort array contents, however we will not explore them in depth.  Depending on the algorithm, the runtime can range from polynomial to factorial.  The algorithm that we will look at has a quadratic, or O(\(n^2\)), time.  There are several sorting algorithms that can be discussed at this runtime, such as selection and insertion sort, however we will focus on bubble sort.
+
+The goal of all sorting algorithms, including bubble sort, is to take a static array of elements and place the elements in ascending or descending order.  While its runtime is O(\(n^2\)), it does not require any additional memory space and performs relatively well on nearly-sorted arrays.  The main problem with bubble sort is its inefficiency with larger datasets, which may cause it to be less favorable when considering real life applications.  Bubble sort is still a useful algorithm to introduce the sorting problem and work through it with an intuitive solution.
+
+The steps of bubble sort to create an sorted array in ascending order is as follows:
+
+
+  
+    Start at the first index of array (\(reference_1\))
+    Start \(reference_2\), traverse down the array
+    At each step compare \(reference_2\) to \(reference_1\)
+    Swap values if \(reference_1 &gt; reference_2\)
+    Continue unitl \(reference_1\) reaches the end
+  
+
+
+The reason for the worst case runtime of O(\(n^2\)) is because of the amount of comparisons which are executed as the first reference is going down the list.  For each index, the algorithm traverses down the list and executes comparisons against each element giving \(n * (n-1)\) or \(n^2\) runtime.  The following is a code snippet of bubble sort:
+void bubbleSort(int demoArray[], int arraySize) {
+    for (int i = 0; i &lt; arraySize - 1; i++) {
+        for (int j = 0; j &lt; arraySize - i - 1; j++) {
+            if (demoArray[j] &gt; demoArray[j + 1]) {
+                // Swap
+                int temp = demoArray[j];
+                demoArray[j] = demoArray[j + 1];
+                demoArray[j + 1] = temp;
+            }
+        }
+    }
+}
+
+
 
 Arrays: Examples and uses
+Arrays are in wide use in programming and there are many examples where arrays are appropriate to be applied.  For example, it offers a useful data storage mechanism which allows for easy retrieval.  This would make it an ideal solution for any problem which calls for easy retrieval where the index of the desired element is known.  This will take advantage of the array’s constant time retrieval.  In video games, arrays usually store the leaderboard scores which are a common place feature.  By using the sorting operation, the top scores of the game can be ranked and retrieved.
 
+There are other uses for arrays which include listing contacts on a cell phone, image storing on a computer, and many other similar uses.
 
                         </a>
                         <div class="info-post">
