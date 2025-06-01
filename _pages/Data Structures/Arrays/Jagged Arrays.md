@@ -5,3 +5,14 @@ bookmark: true
 thumbnail: "/assets/img/thumbnail/jaggedarray.png"
 ---
 
+# Operations
+
+## Insert
+
+## Delete
+
+## Search
+
+## Traverse
+
+# Jagged Arrays: Uses and Examples
