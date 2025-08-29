@@ -11,21 +11,21 @@
     
 </title>
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Dynamic Arrays: Let’s Create and Use One | morontriescode.com</title>
+<title>Dynamic Arrays: Let’s Create and Use One | moerontriescode.com</title>
 <meta name="generator" content="Jekyll v4.4.1">
 <meta property="og:title" content="Dynamic Arrays: Let’s Create and Use One">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="Moron tries to review computer science concepts">
-<meta property="og:description" content="Moron tries to review computer science concepts">
+<meta name="description" content="In the introductory post, the concept of static arrays were introduced. There are several limitations which are associated with static arrays which includes:">
+<meta property="og:description" content="In the introductory post, the concept of static arrays were introduced. There are several limitations which are associated with static arrays which includes:">
 <link rel="canonical" href="http://localhost:4000/Data%20Structures/Arrays/Dynamic%20Arrays.html">
 <meta property="og:url" content="http://localhost:4000/Data%20Structures/Arrays/Dynamic%20Arrays.html">
-<meta property="og:site_name" content="morontriescode.com">
+<meta property="og:site_name" content="moerontriescode.com">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2025-05-19T00:00:00-07:00">
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Dynamic Arrays: Let’s Create and Use One">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-19T00:00:00-07:00","datePublished":"2025-05-19T00:00:00-07:00","description":"Moron tries to review computer science concepts","headline":"Dynamic Arrays: Let’s Create and Use One","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Data%20Structures/Arrays/Dynamic%20Arrays.html"},"url":"http://localhost:4000/Data%20Structures/Arrays/Dynamic%20Arrays.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-19T00:00:00-07:00","datePublished":"2025-05-19T00:00:00-07:00","description":"In the introductory post, the concept of static arrays were introduced. There are several limitations which are associated with static arrays which includes:","headline":"Dynamic Arrays: Let’s Create and Use One","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Data%20Structures/Arrays/Dynamic%20Arrays.html"},"url":"http://localhost:4000/Data%20Structures/Arrays/Dynamic%20Arrays.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -75,7 +75,7 @@
 </script>
 
 <meta name="baseurl" content="">
-<meta name="description" content="Moron tries to review computer science concepts">
+<meta name="description" content="Moeron tries to review computer science concepts">
         <link rel="preload" href="/assets/img/selfghibili.webp" as="image">
         <link rel="stylesheet" href="/assets/css/style.css">
         
@@ -108,7 +108,7 @@
         <h1 class="site-tab">
             <a href="/" class="site-name">
                 <img src="/assets/img/icon/house.webp" alt="" loading="lazy">
-                <mark>morontriescode.com</mark>
+                <mark>moerontriescode.com</mark>
             </a>
             <button id="btn-brightness" aria-label="brightness-button">
                 <svg class="ico-dark" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg>
@@ -476,7 +476,112 @@
 </div>
 <div class="tag-box"></div>
 <main>
+    <p>In the introductory post, the concept of static arrays were introduced.  There are several limitations which are associated with static arrays which includes:</p>
+
+<blockquote>
+  <ol>
+    <li>a limited amount of space allocated to the array</li>
+    <li>shifting elements upon insertion and removal</li>
+  </ol>
+</blockquote>
+
+<p>To address the fixed capacity limitation, a pointer can be used to dynamically allocate memory for the array in this way:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int *intarr = new int[size];
+</code></pre></div></div>
+<p>The above line of code declares a pointer to the first element of the integer array called intarr.  This allows for the memory to be allocated on the heap, compared to the stack for static arrays.  However, the limitation with dynamic allocation is that the maximum size needed for the array is unknown to begin with.</p>
+
+<p>A dynamic array can address both previously mentioned problems while also introducing better memory management practices.  The dynamic array also preserves the effecient storage and retrievals of static arrays, allowing storage and retrieval to be constant (O(1)) time.</p>
+
+<p>Let’s build a generic template class for a dynamic array, then delve into the some of the operations which set it apart from a typical static array.  Lastly, we will try using the array to store a nondetermined amount of elements to test its flexibility.</p>
+
+<h1 id="building-the-template-class">Building the Template Class</h1>
+<p>To begin building the dynamic array template class, the operations would need to be defined.  Most of the operations from the static array would carry over to the dynamic array class but there are a few additions to the dynamic array class which need to be discussed.  The first operation is a destructor or a way to deallocate the memory from the heap since the memory for the array is allocated through the heap.  The second operation is the <code class="language-plaintext highlighter-rouge">resize()</code> operation, which checks the array size and expands/shrinks the size as needed.  There are also several differences between the operations to accomodate the dynamic memory allocation and the overhead which it can possibly introduce.</p>
+
+<p>Before diving deeper into the dynamic array class, the design of dynamic array needs to be discussed.  The dynamic array class inherits several attributes and functions from a generic list class called IList.  These attributes and functions can be used by the dynamic array class with some changes to accomodate for heap storage.</p>
+
+<h2 id="heap-memory-management">Heap Memory Management</h2>
+<p>To interact with the heap storage, manual allocation is necessary unlike stack storage where memory is automatically allocated and deallocated. The manual allocation of memory can be carried out using the <code class="language-plaintext highlighter-rouge">new</code> and <code class="language-plaintext highlighter-rouge">delete</code> keywords.  While efficient memory management is introduced, there will be an overhead introduced to carry out the allocation.</p>
+
+<p>There are three attributes which are needed to be introduced to the class to allow the class to interact with heap storage to implement dynamic allocation.  The first attribute is the <code class="language-plaintext highlighter-rouge">arr</code> which holds the pointer to the dynamically allocated storage area.  When allocating new space for the array, the <code class="language-plaintext highlighter-rouge">new</code> keyword is used alongside with the array in the constructor.  The second attribute is the <code class="language-plaintext highlighter-rouge">capacity</code> attribute which represents the total available space in the array.  This is the important attribute which will be used to track the array size to determine whether to expand/shrink the array.  The third attribute is the <code class="language-plaintext highlighter-rouge">size</code> attribute, which tracks the current number of elements in the array.  This attribute is one of the attributes that are inherited from the IList class and utilized by the dynamic array class.</p>
+
+<p>To carry out the heap memory management, there needs to be three different constructors which take into account the different cases to which the objects can be initiated.  The first is the default constructor, alongside a constructor to be called with a specified capacity and a constructor which declares a capacity and initial value. Here is the code snippets for each constructor:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Default constructor
+DynamicArray() : IList&lt;T&gt;(),
+arr(new T[getDefaultCapacity]),
+capacity(getDefaultCapacity()) {}
+
+// Constructor + capacity(capVal)
+DynamicArray(size_t capVal) : IList&lt;T&gt;(),
+arr(new T[capVal]),
+capacity(capVal) {}
+
+// Constructor + capacity(capVal) + initial value(initVal)
+DynamicArray(size_t capVal, const T initVal) : IList&lt;T&gt;(),
+arr(new T[capVal]),
+capacity(capVal) {}
+
+// Destructor for memory deallocation
+virtual ~DynamicArray() {
+    delete [] arr;
+}
+</code></pre></div></div>
+<p>Notice the use of the <code class="language-plaintext highlighter-rouge">new</code> in the constructors and <code class="language-plaintext highlighter-rouge">delete</code> in the destructor to carry out manual memory management through the inclusion of the previously mentioned attribute members.  After creating the constructors and destructors, the interface functions from the IList class can be defined to control how the DynamicArray objects will behave.</p>
+
+<h2 id="resize-operation">resize() Operation</h2>
+<p>Another major difference between the dynamic and static array definitions is also the <code class="language-plaintext highlighter-rouge">resize()</code> operation, which checks the size of the array and then grows/shrinks the array based on the amount of elements that are existing on the array.  The <code class="language-plaintext highlighter-rouge">resize()</code> operation is triggered before an element is inserted if the current size of the array is equivalent to the capacity.  Also, before an element is removed, the array’s size is checked to see if the capacity is 3x greater than the array’s current size.  This check is implemented in a single line as demonstrated:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// on adding an element
+assert(i &gt;= 0 &amp;&amp; i &lt; size);
+
+// on removing an element
+if (capacity &gt;= 3 * size){}
+</code></pre></div></div>
+<p>To implement the operation, the <code class="language-plaintext highlighter-rouge">resize()</code> function is implemented in 4 general steps:</p>
+<blockquote>
+  <ol>
+    <li>Initiate a new value for the capacity of the new array</li>
+    <li>Initiate a pointer to the new array</li>
+    <li>Copy the elements in the old array to the new array</li>
+    <li>Destroy the old array and set the capacity to the new capacity</li>
+  </ol>
+</blockquote>
+
+<p>These four steps can be incorporated into the insert and remove operations to ensure proper memory management is baked into the implementation of the DynamicArray class.  The complete <code class="language-plaintext highlighter-rouge">resize()</code> function for the dynamic array is as follows:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void DynamicArray&lt;T&gt;::resize() {
+    // initiate new val for capacity
+    size_t new_capacity = std::max(2*static_cast&lt;int&gt;(size), 2);
+
+    // initiate a ptr to new arr
+    T* new_arr = new T[new_capacity];
+
+    // Copy elements to new arr
+    for (size_t i = 0; i &lt; size; i++)
+        new_arr  = arr[i];
     
+    // Destroy old arr and set cap to new_arr
+    delete[] arr;
+    arr = brr;
+    capacity = new_capacity;
+}
+</code></pre></div></div>
+
+<h2 id="ways-to-optimize-the-resize-operation">Ways to Optimize the <code class="language-plaintext highlighter-rouge">resize()</code> Operation</h2>
+<p>While the code that was written carries out the <code class="language-plaintext highlighter-rouge">resize()</code> operation, it can become a problem when the size of the array starts to grow to a larger size.  As the amount scales up, there might need to be some optimization of the overhead that dynamic arrays present when copying the array over to the new array.  One way of optimizing the for loop in the function is to use <code class="language-plaintext highlighter-rouge">std::copy()</code> function to copy the elements to the new array.  This optimization takes advantage of the provided copy algorithm which uses machine instructions to copy the elements over.</p>
+
+<blockquote>
+  <p>Quick Overview of <code class="language-plaintext highlighter-rouge">std::copy()</code><br>
+The copy algorithm provided by C++ takes three different parameters and is in the format copy(start, finish, element) where start and finish defines the index range of the copy and the object is the address of the object where the elements should be copied to.  C++ also provides other algorithms which can also act on overlapping ranges such as <code class="language-plaintext highlighter-rouge">std::copy_backwards()</code></p>
+</blockquote>
+
+<p>An optimized version of the <code class="language-plaintext highlighter-rouge">resize</code> operation replaces the for loop with the copy algorithm as follows:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void DynamicArray&lt;T&gt;::resize() {
+    size_t new_capacity = std::max(2 * static_cast&lt;int&gt;(size), 2);
+    T* new_arr = new T[new_capacity];
+    std::copy(arr, arr + size, new_arr);
+    delete[] arr;
+    arr = new_arr;
+    capacity = new_capacity;
+}
+</code></pre></div></div>
 
     <!-- see https://giscus.app/ -->
     <!-- <div class="giscus" id="giscus" style="margin: 4rem auto;"></div>
