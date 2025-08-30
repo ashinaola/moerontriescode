@@ -959,6 +959,12 @@ A major advantage of using the std::vector class to store elements compared to p
 When handling 2-D arrays, there should be care about how the program handles memory as well as accessing the array elements.  Traversal of the 2-D array is a great example, where it is recommended to traverse through columns using the inner portion of a nested loop and the row traversal being executed by the outer loop.  This would prevent the program from jumping to new memory locations to access elements within the array since the values are stored within contiguous blocks of memory.  Changing the iteration, by having the inner loop traverse the columns and the outer traverse the rows, will result in a slower execution time which would be problematic for larger inputs.
 
 2-D Array: Use Cases
+Because of its convenience and application accross different domains, 2-D arrays are used frequently to store multi-dimensional information.  Since 2-D arrays can be utilized as matrices, they can be seen in many areas which incorporate linear algebra as part of its solution.  Two areas where this is observed are in computer graphics and in deep learning solutions such as large language models (LLMs).
+
+Computer Graphics
+In computer graphics, the 2-D array is used to store the pixels of the image in the form of decimal values.  The values can be used to map to the image, and linear transformations can be utilized to transform the image.  These solutions are useful in creating simulations and animations which drive discoveries in areas such as biology and physics.
+
+Large Language Models (LLMs)
 
 2-D Array: Example - Linear Algebra Operations
 
