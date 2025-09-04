@@ -511,17 +511,69 @@ This will allow for the integer element to be stored and worked with in the same
 <p>Because of its convenience and application accross different domains, 2-D arrays are used frequently to store multi-dimensional information.  Since 2-D arrays can be utilized as matrices, they can be seen in many areas which incorporate linear algebra as part of its solution.  Two areas where this is observed are in computer graphics and in deep learning solutions such as large language models (LLMs).</p>
 
 <h2 id="computer-graphics">Computer Graphics</h2>
-<p>In computer graphics, the 2-D array is used to store the pixels of the image in the form of decimal values.  The values can be used to map to the image, and linear transformations can be utilized to transform the image.  These solutions are useful in creating simulations and animations which drive discoveries in areas such as biology and physics.</p>
+<p>In computer graphics, the 2-D array is used to store the pixels of the image in the form of decimal values.  The values can be used to map to the image, and linear transformations can be utilized to transform the image.  These solutions are useful in creating simulations and animations which drive discoveries in areas such as biology and physics.  For instance, there is a useful library called OpenGL which enables the creation of 3-D objects and scences by configuring a camera and lights to add a more ‘realistic’ effect to the scene.  The OpenGL library is in the C++ environment and allows for one to build off of their knowledge of linear algebra to set up and manipulate 3-D objects.  This is the homepage to the OpenGL documentation page:<br>
+<a href="https://www.opengl.org/">OpenGL Homepage</a></p>
 
 <h2 id="large-language-models-llms">Large Language Models (LLMs)</h2>
+<p>In recent years, there has been a major advancement in deep learning within the area of natural language processing.  Previously, chatbots were powered by Markov Chain models.  These were mathematical models which used a transition matrix to store different states and map the possibilities to them.  For example, imagine that a day’s weather can be sunny, rainy, or cloudy.  The transition matrix would store the probalities that the sunny day would become cloudy or that the rainy day would become sunny, etc.  Each row of the matrix must have transition states which add to 1.  There also needs to be a way to tie together the states that are stored on the transition matrix which is where the Chapman-Kolmogrov equation comes in.  The Chapman-Kolmogrov equation states that the probability of moving from one state to another with steps in between would be equivalent to the product of all the transition values from the transition matrix.  The equation is defined as so:<br>
+\(P^{m+n} (i + j) = \sum_{k} P^m (i,k) P^n (k,j)\)<br>
+With Markov Chains, it was possible to predict the next expected word which is being processed by a chatbot.  Or predict the overall context of the words sent by the user.  As seen here, before deep learning was utilized as a solution for chatbots, a 2-D array can be used as a data structure for the transition matrix.  However, one of the disadvantages which came with Markov chains were their unintuitive nature and limited scope which resulted in a limited chatbot.</p>
+
+<p>During the 2010s, researchers began experimenting with recurring neural networks as a way to process text and speech input with the goal being to have a better prediction rate of the possible words.  There were various models such as GRUs (Gated Recurring Units) or LSTMs (Long Short Term Memory) which introduced new solutions which can be utilized in natural language processing.  These solutions work by generating the hidden states after processing the inputs and outputs of the model sequentially.  In practice, this can present several problems such as a vanishing gradient as well as a limited computability issue.  These can limit how well the models can handle more complex inputs and tasks.</p>
+
+<p>To address the shortcomings of the GRUs and LSTMs, transformers were created to achieve a similar result but with a lower computing requirement.  This is because transformers posses the ability to process inputs and outputs in parallel instead of sequentially like GRUs.  This allows for transformers to be quickly trained relative to GRUs and LSTMs.  To implement training, matrices are used to store the encodings which will come in later during the training.  To implement programatically, it is not unusual to encounter vectors and 2-D arrays to store the encodings and positional encoding of the set.</p>
 
 <h1 id="2-d-array-example---linear-algebra-operations">2-D Array: Example - Linear Algebra Operations</h1>
+<p>After presenting some real world instances of 2-D arrays being part of bigger solutions, showing how some of the matrix operations are programmed can help visualize how powerful they can be as a store.  But it can also help show some of the bottlenecks that researchers may encounter while utilizing matrices to model complex real world problems.  Linear algebra is incorporated into many different disciplines including genomics, electromagnetism, and economics.  This is because of its usefulness in modeling non-linear behavior in a linear model, which makes it a driver for tools that are widely used such as Priciple Component Analysis (PCA).</p>
 
-<h2 id="dot-product">Dot Product</h2>
+<p>Discussing matrix mulitiplication can help give an overview of the general performance of the data structure and present several of the limitations which were previously discussed.  A great way to become even more familiar with the operation would be to define the operation step by step through function definition and the manipulation of the data structures.  We will take a matrix, let’s call it \(A\), and another matrix called \(B\) to demonstrate the two operations which will be defined through function definition.</p>
 
-<h2 id="cross-product">Cross Product</h2>
+<p>Let’s define matrix \(A\) as:<br>
+\(\begin{bmatrix}
+3 &amp; 12 &amp; 7\\
+11 &amp; 4 &amp; 0\\
+1 &amp; 7 &amp; 6
+\end{bmatrix}\)</p>
+
+<p>and let’s define matrix \(B\) as:<br>
+\(\begin{bmatrix}
+32 &amp; 1 &amp; 6\\
+2 &amp; 7 &amp; 10\\
+4 &amp; 11 &amp; 25
+\end{bmatrix}\)</p>
+
+<p>and here is the code to initiate the matrices:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int matrix_A[3][3] = {
+    {3, 12, 7},
+    {11, 4, 0},
+    {1, 7, 6}
+};
+
+int matrix_B[3][3] = {
+    {32, 1, 6},
+    {2, 7, 10},
+    {4, 11, 25}
+};
+</code></pre></div></div>
 
 <h2 id="matrix-multiplication">Matrix Multiplication</h2>
+<p>The function defines the operation to be performed on the matrices that were defined previously as such:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void matrixMult(const int A[3][3], const int B[3][3], int result[3][3]) {
+    // Initialize result matrix to zero
+    for (int i = 0; i &lt; 3; ++i)
+        for (int j = 0; j &lt; 3; ++j)
+            result[i][j] = 0;
+
+    // Perform multiplication
+    for (int i = 0; i &lt; 3; ++i)
+        for (int j = 0; j &lt; 3; ++j)
+            for (int k = 0; k &lt; 3; ++k)
+                result[i][j] += A[i][k] * B[k][j];
+}
+</code></pre></div></div>
+<p>we can then call the function with the following code:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>matrixMult(matrix_A, matrix_B);
+</code></pre></div></div>
 
     <!-- see https://giscus.app/ -->
     <!-- <div class="giscus" id="giscus" style="margin: 4rem auto;"></div>
